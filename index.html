@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=8e24f7ab-66f5-4bba-b13f-33da3cb03659" type="text/javascript"></script>
+</script>
+
+
+</head>
+<script>
+    $(document).ready(function()) {
+        $("#flip").click(function()){
+            $("#map").slideDown("slow");
+        }
+    }
+</script>
+<style>
+    @media screen and (max-width: 1199px)
+#rec213050385 .t396__artboard {
+}
+#rec213050385 .t396__artboard {
+    height: 450px;
+    background-color: #C4D8C8;
+    overflow: visible;
+}
+.t396__artboard {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+a, b, blockquote, center, code, div, h1, h2, h3, h4, h5, h6, i, img, p, pre, span, table, td, th, tr, u, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+#allrecords {
+    -webkit-font-smoothing: antialiased;
+    background-color: none;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+}
+@media screen and (max-width: 1199px)
+#rec213050385 .t396__carrier {
+    background-attachment: scroll;
+}
+#rec213050385 .t396__carrier {
+    height: 450px;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.t396__carrier {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    -moz-transform: unset;
+}@media screen and (max-width: 1199px)
+#rec213050385 .t396__filter {
+}
+#rec213050385 .t396__filter {
+    height: 450px;
+}
+.t396__filter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+}
+a, b, blockquote, center, code, div, h1, h2, h3, h4, h5, h6, i, img, p, pre, span, table, td, th, tr, u, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+#allrecords {
+    -webkit-font-smoothing: antialiased;
+    background-color: none;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+a, b, blockquote, center, code, div, h1, h2, h3, h4, h5, h6, i, img, p, pre, span, table, td, th, tr, u, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+#allrecords {
+    -webkit-font-smoothing: antialiased;
+    background-color: none;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+body{
+     max-width: 100vw;
+    overflow-x: hidden;
+  min-width: 1500px;  
+    background-color: rgb(236, 241, 236);
+    font-family: 'Roboto Condensed', sans-serif;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    vertical-align: middle;
+    padding: 1% 10%;
+    border-bottom: 4px solid black;
+}
+</style>
+<style>
+        .popup{
+    position:absolute;
+    top:0;
+   
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100%;
+    background-color:rgb(1,1,1,0.6);
+    z-index: 2;
+    opacity:0.7;
+        
+}
+.popup-content{
+
+  
+    background-color:white;
+    display:block;
+    height:300px;
+    width:500px;
+    
+    position:relative;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+input{
+    display:block;
+    margin:20px auto;
+    width:50%;
+    padding:8px;
+}
+.closed{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    cursor: pointer;
+
+}
+<style>
+*{
+    margin: 0 auto;
+}
+.user_profile {
+   
+    top:80px;
+    right:0px;
+    margin:4px 10px auto auto;
+   
+    background:rbg(0,0,0,0.7);
+    border-radius:5px;
+    display:none;
+}
+#profile_img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    display:inline;
+
+}
+#user_name{
+    margin: 0;
+    padding: 10px;
+    display: inline;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+</style>
+</style>
+<style>
+    
+.bt{
+    margin: 50px auto 0 auto;
+    color:orange;
+}
+
+#btn_white{
+    font-size: 25px;
+    color: lightpink;
+    padding: 0 30px;
+}
+.btn{
+    margin-top: 20px;
+    
+}
+.btn2{
+    margin-top: 3px;
+    
+}
+.btn1{
+    margin-top: 20px;
+    margin-left:700px;
+}
+h1{
+    padding-top: 100px;
+    font-size: 50px;
+    letter-spacing: 25px;
+}
+
+
+.word{
+    margin-top: 60px;
+    font-size: 20px;
+    border: 3px double white;
+    width: auto;
+    padding: 20px 20px 5px 20px;
+    font-style: italic;
+}
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px;
+    font-size: 0;
+
+}
+.items1{
+
+        text-align:center;
+flex-wrap:wrap;
+margin:0 10px auto 0;
+font-size:10;
+}
+
+#sol{
+    text-align: center;
+    margin: 70px 0 40px 0;
+    font-size: 40px;
+}
+
+.item{
+    margin: 30px auto;
+    text-align: center;
+}
+
+.motiv{
+    background-color: grey;
+    padding: 20px;
+    font-size: 16px;
+    color: white;
+}
+
+.card{
+    width: 300px;
+    height: 400px;
+}
+
+.card-img-top{
+    height: 220px;
+    object-fit: cover;
+}
+</style>
+<style>
+    .nav {
+      float:left;
+    }
+    label{
+        margin:8px,0,0,20px;
+        font-size:30px;
+    }
+    #toggle{
+        display:none;
+    }
+    @media(max-width:768px){
+        .items{
+                display:block;
+                text-align:center;
+                margin:0 100px;
+                width:40%;
+            }@media(max-width:768px){
+             .items1{
+                display:flex;
+                text-align:center;
+                margin:10px 100px;
+                width:45%;
+            }
+              .btn1{
+                display:flex;
+                text-align:center;
+                margin:10px 190px;
+                
+            }
+
+}
+
+        
+        h2{
+            margin: 0 50px;
+            width:30%;
+            padding-top:20px;
+            text-align:center;
+        }
+        label{
+            display:block;
+            cursor:pointer;
+        }
+        .header{
+            display:table;
+            text-align:center;
+            padding-top:60px;
+            margin:0 5px;
+            font-size:20px;
+        }
+        .header div{
+            border-top:1px solid grey;
+            padding:10px 0;
+            margin:0 0px;
+
+        }
+        #toggle:checked + .header{
+            display:none;
+        }
+    }
+    div<.tn-atom{
+
+        text-decoration:none;
+    }
+
+    </style>
+    <style>
+        h4{
+            text-align:center;
+            font-family:courier;
+            font-size:400%;
+            background-color:lightblue;
+            color:orange;
+        }
+        h5{
+            text-align:center;
+            font-family:courier;
+            font-size:150%;
+            background-color:yellow;
+            color:yellow;
+        }
+        * {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.containeri {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column1 {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+       
+    
+    
+<body>
+<div class="nav">
+<label for="toggle">&#9776;</label>
+</div>
+<input type="checkbox" name="" id="toggle">
+    <div class="header">
+            <div onclick="change(this)">BOOKS</div>
+
+            <div onclick="change(this)">TOP BOOKS</div>
+           
+           <div><a class="tn-atom" href="#map">CONTACTS</a></div>
+            
+            
+    </div>
+   
+    
+     <div class="items1">
+    
+    
+    <img id="m1" src="https://cdn.shopify.com/s/files/1/0048/2780/7834/products/image_6f75c4dd-5f12-4c8d-8ef9-368ef6b938c7.jpg?v=1567304402" alt="" width="50%" >
+
+   
+    </div>
+     <div class="items1">
+    
+
+
+    <img id="m1" src="https://cdn.shopify.com/s/files/1/0048/2780/7834/products/image_812f229c-a69b-460f-b6a8-8acd8b5b5d87.jpg?v=1567304402" alt="" width="50%" >
+
+    </div>
+   
+
+ <div class="flex-container">
+<section >
+    <img class="mySlides" src="https://ebookfriendly.com/wp-content/uploads/2014/10/A-book-is-an-adventure-waiting-to-happen-540x359.jpg"
+  style="width:100%">
+  <img class="mySlides" src="https://pixnio.com/free-images/2017/05/23/2017-05-23-16-56-08.jpg"
+  style="width:100%">
+     <img class="mySlides" src="C:\Users\User\Pictures\p.jpg"
+  style="width:100%">
+   <img class="mySlides" src="https://images.squarespace-cdn.com/content/v1/57451c424c2f85ae9b18f48d/1568646073249-36TTF96MOPJON52HVE83/ke17ZwdGBToddI8pDm48kK60W-ob1oA2Fm-j4E_9NQB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0kD6Ec8Uq9YczfrzwR7e2Mh5VMMOxnTbph8FXiclivDQnof69TlCeE0rAhj6HUpXkw/Photo+Sep+10%2C+2+25+33+PM.jpg"
+  style="width:100%">
+    <img class="mySlides" src="https://booklikes.com/upload/post/88/61/fa3cf62189b45b22939109da739276e0.jpg"
+  style="width:100%">
+  <img class="mySlides" src="C:\Users\User\Pictures\1Book.jpg"
+  style="width:100%">
+  <img class="mySlides" src="C:\Users\User\Pictures\Book5R.jpg"
+  style="width:100%">
+  <img class="mySlides" src="C:\Users\User\Pictures\Book5Q.jpg"
+  style="width:100%">
+  <img class="mySlides" src="C:\Users\User\Pictures\Book5P.jpg"
+  style="width:100%">
+</section>
+<div class="user_profile">
+        <img id = "profile_image" src="C:\Users\User\Pictures\Avatar.jpg" alt="" width="5%">
+        <p id ="user_name"  >Sholpan Sabidolda</p>
+    </div>
+  
+    
+
+    <div class="bt">
+   <button onclick="popup()" id = "btn_white"class="btn1 btn-outline-dark btn-lg">Log In</button>
+    </div>
+    <div class="popup">
+            <div class="popup-content">
+                <img onclick ="close_popup()" class ="closed" src="C:\Users\User\Pictures\Close1.jpg"alt="" width="7%">
+            <img src="C:\Users\User\Pictures\BookLogo.jpg" alt=""width="20%">
+            <input id="username" type="text" name="username"placeholder="Username">
+            <input type="password" id="pass" name="pass" placeholder = "Passord">   
+            
+            <button onclick = "login(username.value)" class="btn2 btn-outline-dark">Log In</button>
+
+    </div>
+</div>
+<h2 id="sol">An online platform to organize your book club</h2>
+
+    <div class="items">
+        <div class="item">
+            <div class="card">
+               <img id="kximg0" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAL0AfAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAHAAECBQYEA//EAEAQAAEDAwMCBAUCBAMECwAAAAECAxEABAUSITETQQYiUXEUYYGRoRUyByNCsVLB8CRicoIWF0NTVGOSssLR8f/EABoBAAIDAQEAAAAAAAAAAAAAAAABAgMEBQb/xAAuEQACAQMCBAQGAgMAAAAAAAAAAQIDERIEIQUTMUEiUWGBFTIzcaGxI9EUUsH/2gAMAwEAAhEDEQA/AM7bWd1eKUm0S2SlOpWtYSIq5vPD7bCWS28shbgQVHdKAe+w4qssXkItrxhaFKcfbQG0gT+1Won6AE0WMDodxFktJCkqYQQQZkQK5sLJJuOx6XV6icJyUZeXsCu+x3wa3gnq3CWo8zKCdXtSxmOVe5uxslIeQ1cqSFK0bpn32mjIpkA1LoiIgRUZOLldLYyy11Z0sE9/MGGZ8MWmPyr1ovLsW6G0pKV3YI6kjeNIPFdFh4Qs7nFXN41kDkFtOpQlrHj1jnUPrRG6ACZpIZT6fepZ0/8AUpeq1Galmwa5zw/iMPkPhHH8o4oISslu21jftIEVn3bNtTt38Mp1LTIBb67RStzbiPejYGEyfKIqIt0zETvVfhvck9XWskpAysPCzFxjLe6dv0MLctQ8sLSuGzAOk+X/AFFVX6Vbds1ZLI5CW3N/bb+9GR1gBJg9+KXTEpUfSDNWOdNr5SEdTqU1ebYHrPCtXQbCczY9RwgdEIc1nf2ifc1cO+D2G2Ctd8pvSmSpY8qT9BxRMSye/ekbcRAiai5w7IsjrK6veVwP3+HtLW0W/bZBrIOpKdNtbBfUXJAMSmNgSfYGq1yzcZaLqUO3PEtMI8yJ5KtzsP8Ad1e4o5G3AEADaoqakHSPf50rx7Ii9ZqW7uQCneg1pl6JG8pI/uKhWr/iuGRcWwXI/wBmciB86yY4FE4pJNHX0WqlXvkuhbeHseu8furhDSFpsrdbqyp4oISQU7QDJMxvEc0UPDidGGx4DfTAt2xo1atMJG0wJ96G3hi++DayrXT1/E2fSnVGmVAT+aJHhd5T+CxrxTp6tq2vTMxKQYqbcuUl2Odr1FVm31/5b+y40iJPNJImDSAHBO9L9vfaqDEJSd6SU+aBzTKWNiOKfSdX7tzQI8b+8bx1u9dXOvpNplZQkqIHrA3rmusxZW1ta3SnFKbulJSzoQVFZVwIFPnkLVirpLTTjy1o0pQhMlRrOv468QUj4Z1xi3u2jahKfMGy4lxcjtpA0/SmWRjFrc2BdbX/AFJ5gb9/SpHaAe/IqjYxyUZ91XQUGIFw3LcJ6xkKIPrpjb5mrwEmhkGrEpCSdtvSkkzJ7mopOqT2FOdzt96Qh1Gdpj1plDapACNhUVKMQkSe9MDEeJ0I/wCkigoAj9DuTB9eq1/90N6IPj0lF/aKCoUWlCflI29qHx5NSnPJJeR3uHUeXSyv8xYWDZVjcrcJcUldu20oQBCpdSmD96LPh8g4izTAA6COBHYUKsUNWJzqextEr+qVhQ/Ioq4EacbZp/8AJRB+goyvGyOfrofzSk/T9FnyIPPalpkbmDSiefpSUTUDCJAkbc1jdOQ/6Z/pX6xei3Nv1jBTqmeJ08Vs2ztP3rJqj/rMSRv/ALAf700XUd8vszXgjUZPYUuRHc71zXV0zaMO3F0pLTTaZUtfCRVJjkrdy2abVd3am0BCWkl9XlCkySPQ0WKlC92aVUK8p4qBA1T/AE+tYbDvpyNjY26cvkRkrhC1FQfVpQUgkSDtGw4r3yl0m0zt83fX1+llFkh9LbDqwNZKtQEcDYUWJ8p3tc2aTPHbaansBvVVhWH2ELm5efYdCXGg+vUpEjdJMbjj81ZoHrz/AGoINWGI7RApzskTTqIG/pTKUSNhtSEDD+KhZOTx6HEKW4q3c6aUHedQnasdWm/izdqx3iXCXiEJcLbD3lUqOSB9qzA4FX1aeMIy8zo8ISzqP7HbZ3TlvZZFli1duXbq36KUtCSO8x8gCfpRbwZnE2ZHdlH08ooSYyzZvnFsPXq7MkAoW2sJUozwPeYov4lpLFpbsgkhttKZPeBULJQuPiH1H7FilQKYioHmn/adqiQe+9QOaST+KyjuL8QLz5zLf6alwNdEIK1kaftzWuQo7CBxzUhMQYFInCbjexkrjDeIMteWycrdWabBDqVusW5V5433kb1ZWlhk2b/KXC2rQouwC2kOq2KRAB8vcV15jKIxVt13E65UAE6o2AlRn5JBP4rmv84u0uXWhboWgW4dad6my1QohB22kJJB3p7ks5SQ/h/FvWWNtLbINsqftNQbW0onYgyeB6kVzXFhlf1y8vW2bJ1q4t0W+hbykkpSVHeEnnVxXS7mH2vinXrVv4e1dCHFofJUBCTqjSJgK4ntVzJH7U7+9G5HJpt+ZTYq3yKH33sk40jyoQywwolCEpn1A3M8/IVcxIBqISriRB5+VSSnyiTQRbuOY7bVAkQYJPtU1JTpIqMadQmRSEC7+JjbC/FWGTcJJPwr2hJSFAmRzWRoreJ7y3tbtgPvMt642dWBI8+4n/W9ChIISParql8Ys7PDJLBxOy0YCrHIX+sh2xS04hP9KiXUpIPy70XsQ6XrC2dUAFLaSoxxuKEuIDz77tmhTPRuG1B4OLSknSlSk6ZP+ICflRV8Ohf6Jjw6UlYtm9RSQQTpHBHam2uVEw62S58o/b9Ft/qaYST/AIqcCJ7gVz5C1eurRxpm4dtVK/a4yQFA9qpMqV2dqZAB2ikqOCOax/gdy8v7XIIyGSvVXTbirdaVLENxEKTtzM7/ACqHhtd6fFeQx99lby4+E8zSFLGlxJ/xbb8p+tBY6LTkr9DUv2DNw8l90k6EKSlJgpgxJiOdq5P0CzFsu2ccedbU0hqHFA6UoJ0xtyJ5qqzLN2/4ptLOzyl4wh1pTtwltYAQlMBOnbYk1qoKUgKMwOSeaCDTjbfqVdxhrd1x4qduFIfdDjrOsBCiIgGBMbDaas0ft3AUZ3p2yONvalp83oKLkbi2A/bFOAkgCPzSUpXETPcU8pI7UgFpHofvUFaQoxAqXsSKjGxO1AGI8b2eEu761GXsPi3UtLU35iNKZEmJ9Y3ocqgExsJ2oheLmHXvEY6TSzGGuZIE/wDaN0PDzUpRtvfqdvhmLptpb3O7EIQq6KlplSUmCBJEgg/iR7TRa8PoBw9klrSG0sI06eI0ig9ZXbNm/rfuzapKFjqBsrnynaPnMfWi14K28K4cJHNkzsO3kFTwly82Z+JVYuoqaW5do22KZmpzBiNz+KWgAQCfUmm1FJgRJFVHMMahwYLx1epcIRa31sX5PGtMk/gK/FVNsHcbkMJ4icKk/qbzguAewc3QPsR9q0/i7w4vPJs+k6ht1pZC1KndBG/14rq8R4QZXBqx9uUNrRpLSlHZJB2/Ej60zXGtDa/fZnN4dT8dmMvllQUqdFqyfRDY833M0rfq5zL5BL1w+1ZWLgYQyw4Wy4qASpShueQIq1wmOOLxNvZBYUW0eZQ/qUdyfqa41Y68ssg/e40sLRdQXrd5RSCsCNQUAe2xEUFDkm3b2PC2cdt825hXbh522eteuypTh6je+kp1c+hHes9ZX7CsKOplcocqoOdNCHXVFZCiEwmCCOPlWnssZeIvrjK3imV3rjXTZaSSG2kAzpnkmeTFcNt4euk4Jq1ddaavrVxTlpctyYJUTuCBtvBHencsjKH6ObMXT9qcC/k7q5t1KSfi0MuqSFEImNKTuZ2+fFWmBbcyDv607cvaLjzM2yX1FttHHmHGr1HANeV3ZZW7vcVcOpsgqzUVrSHFQokRttt6+9emOxl/j8pdG3+HGMuHNfS1q1Nk8kCI3Pbigi2nH1LxW3HNJQOmOPekknUNX0qS1AjakUmR8QPItsz1XlL0/plxsjvpKVEH5Qk/ihcTqJI4O9E3xhiLnI3DDluttKENqQrUo9/YUMljStQPIJFN3sjt8NjCMXi931XqMvHt5C3fQ4halobloNqg6uPbiee8UZvCSOh4cxbZELRaNJVPIISBFDLwuzaP3byL1b6UhqUlkAnY7zNFXFpS1asJa1FtKAlBXEkfOrnzOSk/lMfEOTzvC/H3LEkpAHc0yDJMmmJnvvUhCB86zmAZXrzA2p0k7yCD70yQYied5pwgDmfagB9XlGxAqG+kgbCdqmFDgmm2VMGRQAw1KTvJ9KlynfcdxSSqNvSohW9ACgE6Y+tO4dOx9pqKlA8UySIIkkTNAHsn9vG1QUQB6j1NMFlRgbUygrSYoA5nU2yigv3bNuVr6bYcUB1FHsJO5+VA1Y/mLn/Ef70abq5sWOg3f2vxOq4SpEtFXTIk6hAO4IG1Bdwy4s/7x/vWmqrU4nQ4Q1zKnsd2FuUWj7q1o1SjSPNEGRRcwy+pjrZcbLaSr57ihZ4Ts2L3JLZukvlHTJhhOpU9tvSijgklOLtEwdmUD8Cq85uCi3sT4jCip5RXi7/bsWKtyCO1SJWUwBPzNNp4j04pwtUwQYqo5gyPLJUOBFTmImuRy9aRkfgg28p5TCnwEpkFIMHf1kjb50rLIW19a29y2vQi5TqaS75VKHPFSxla9iOSudKFKKtz2p0/vE7SOwrnS+xvDzRKRqMLBgetSF2xqIFyzKRKv5idh96WL8h3RMyVxTqQNO/Ncl9k27J5hDiXlm4KggNInhOoz6bAn6V62t2zcIbUFlBcSSlDvlXsYMg79qeLtcWSOlKZG3FQ3BO/evNV3bttrX1WyEDeHB9BzyYrzsbpq+tLe8Z1Bu4bS4gKEGFCRI+tGLSuNNM6UpkwaTp8pT3qIQVKO8R6UnBB/wA6iMzXiHOOYx9baGm1i2tHcggrURrWghIR7HXM/KhSpWpRVEaiTHvWx/iZl7TG3wRdhwm7xT9uzoEw4VoInfjY1ja2Vl/FA38H+pU9i58G3D9v4ktfhpJWh1KkAxqHTUfxz9KJ/h4k4qyMknoI3/5RQpx5UMPmyzq+IDLPSKJ1yXkzpjfieO1Ffw4nTiLILBSoMIBSRx5RVc/pxFrfrTv6fothA3UNvUU3kMzvTkgCm94rOYiovcQLvMt3bqWXGEWi2UtrUqdalAg7dvL+ar7Pwy4ybEuqZeVb2rDCpccAT0lEhSQImZ4PcDnitP32ppPYmrVWklZFbpp7mYZ8OXDbDaENY9J6V0hzSkwvqqlM+XcCBU14ZsXePtre1SyG2gi8W2xDTzWxjV3OtCfoVVpd++0/mmUJSafOl3DlorM7iv1Z6yS70/hmlOdZBKkqUFNlHlI/4u9c1xhHHMi4804zoceYdU4oHqI6QHlT20qjfj9yuZq+AEQe1RSOaiqso2sNwRnGPDzlvbWPTYx3Xt1O60Fs9NevYHYTqT/YkbTVrhbNeOw9jYvqbUu2t0M6mwQk6UgSB2mOKsAkk7GogCIkelEqspKzEo23Qw24k/SkqRx+alo0iR/+15mSCNRTHaoEwb/xMwtxl77HOW90hjyrtlgomQuT/wDD81jBwPaih4rdtmrpgXLqkKTDrYAnWoBY0/Ln8UL0/tHtV9WplTjHyOrwqCTm/OxdeEHWWM9avPuJbQ04hRUfTUKL1u61c/z2FBbTh1oUO6TuDQSxrpYfKwoJITyUhXcdqLvhskYSwB/8Oj/2iq7rGxHiUZZqTXoW077VKABvXmeBzXpB2PeqzmESDq39KkI+e/yptR3Mb0+sxuIoAj/TtVXf5f4K2uLt1DSLFhehbzr+gqVMQkQQd9tyJNWiDtvWE8aZe3tVfpVtZoyeQW8H2Gir+VbyZ1vAGNlbifxFXUYZysQqSxRvN9iDM0qqPDltkmrXXlsp8ddOJlaUBAabPomBJ9zVqQUkSftUJxxk0Si7omlYqEArJpRPH5qRHBqAxadQ3NRUIXwQDU9wai4pOgz9qG0uozB+OGHbi+sxbIU84AVdNCSSYmYj3oejYR6bUZ3GAvKW96lelbLS0pSO8isD48CU5pEQn+Qn+5qj/Jg3jHc6ujqKHhS7fncyq7pFrGttxwr8qUt8zRo8MnVhMeVJUhRtm5SoQU+UbGg7a2l1d3bScfcpZuWv5iNXeCP84oyYBalYmyW46h1SmEFTqNgskCVAfOuhKnTVCMl17mfX1arrOnL5V0Lf1HalBEelRQ4IPvT9QDaazGIU87d6UT3+1MCkgbj2pKVpEgUCHQCU7k7ivNi2t7YKDLLTYVyG0BM+8VIKEkV6QnaYp3DY8WWbdtRWwwy2sjzKSgAn7V6n1NJJCQIj70ynExxtSYDHkxSWsBO8b1Jlbbh3VpSOVHtVRkcgh18W+OHVWk+ZXaAJ29fxUZyeDnHca3di4Cmg2p155ttKRKiVAQPX5Vn7nJdZ0i0QXU6tGs7QTI4PzEGa4mnrdlxtu8U7fZFE6bW28yv+ZZ2QDsTJHy9K7Di7vJlTmUcTbMKJUbK1MBX/ABucq+fApVKUatOLCLxkyiur0M3EsLcyGSt9bi0MmUBEBJSpZ2HA4EzO1YzMZW4y14bm4S2hWkJCUDYAVu/EV3aYFTFsiycDd0wq1YRbNAp1kpgH02B3+VDZX7le5prTxgk7HX4eoTyb6l34Vt1P3T+nSdLYGlSoBJUO8GOPz8q1Vv4sx+OtGbd5Vw44215ldMeaIBPO534HzoeNuKZP8swSOa9PiXzy4ftVyqbKLWxqraGNZtykE5Pi6xUrQ226pXpqQk/ZSgTXVZ5wXzPVtLK7ebmNTSAsT7pJFChrI3TSv5Tykn1EV43Tjr6wt198qiPK8pH4BAog43szLU4bven+Qso8R2fxF7bOhxh+zbSt1t5GhR1AkBM8mAdq9F+IbNrCXOYWHfhbbRrhPm8xAEDvyKE9lcvWLdx8O4ofEoCHSrzlQ3jdUnua9VZW+Xjnsap8mzejqNQIVpiP8vtQ3HL0KvhlTlO7WV9vsaxf8WvDEx1rvUD/ANx3+9XI8aY5Nt8Uti96WnVqLP8ATMTzxPfisM34ny6G0NIuGwhKQkD4ds7f+mqiFFnola+kd9Gox9qlKVLayKPhup80FWw8Y42+xJyNt1jbpdLR1NwZHy9N6ucPeryK3lKt37dIb2buGtCueY9DQWs33bWxNlbK6dsXOoW4mVHvV9b5nIYzwzbIsrp1ty6U6lbuolYSDwCdxVWzbXa/4HW0M6dOL7mwy13Y2V8hnJXpdWpZ6NkgBbjk8bHjlSZO0Ebg1wWuYczaSy207j7FCSfhbNEuFIk+ZwceyfuaxFjk7yxSv4Z0AqWXFLWhLiyqInUoEzHzrzZyF2xPSfWiRpJTtsdjRBRprFGuPDbpup1Chib23ZswMTiLw20wFMMCCr5kmZqLniq0RcP271veNOsQHUqZ/YTwDvQzayuQbRpavHm086ULIE+wrxNy+t5x9TzinHSNalKJ1R6z7VJtY+pD4W1VTUvDfp3sEi48QWbzbj/SfU0kaSvp/tUeO9DJW6lEdzXt8ZcBBQHl6CZKQdifavCk5trc30NLToNuHc//2Q==" class="rISBZc M4dUYb" height="189" width="250" alt="" data-atf="1">
+                <div class="card-body">
+                  <h4 class="card-title">Henry Ford</h4>
+                  <h6 class="card-text">My LIfe and Work</h6>
+                  <a href="#" class="btn btn-outline-secondary">3000 KZT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="card">
+                <img src="https://thumb.tildacdn.com/tild3932-6138-4430-a337-333134306566/-/resize/320x/-/format/webp/IMG_0043.png" data-original="https://static.tildacdn.com/tild3932-6138-4430-a337-333134306566/IMG_0043.png" class="js-product-img t-store__card__img t-img loaded" imgfield="st_gallery__202991521201:::0" height="189" width="250">
+                <div class="card-body">
+                  <h4 class="card-title">Hal Aprod</h4>
+                  <h6 class="card-text">Miracle Morning</h6>
+                  <a href="#" class="btn btn-outline-secondary">2000 KZT</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="card">
+                <img id="dimg_60" src="data:image/jpeg;base64,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" class="rISBZc M4dUYb" height="189" width="250" alt="" data-atf="1">
+                <div class="card-body">
+                  <h4 class="card-title">James Clear</h4>
+                  <h6 class="card-text">Atomic Habits</h6>
+                  <a href="#" class="btn btn-outline-secondary">5000 KZT </a>
+                </div>
+            </div>
+        </div>
+         <div class="item">
+            <div class="card">
+                <img id="dimg_52" src="data:image/jpeg;base64,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" class="rISBZc M4dUYb" height="189" width="250" alt="" data-atf="1">
+                <div class="card-body">
+                  <h4 class="card-title">Raymond Chandler</h4>
+                  <h6 class="card-text">The big Sleep</h6>
+                  <a href="#" class="btn btn-outline-secondary">4000 KZT </a>
+                </div>
+            </div>
+        </div>
+         <div class="item">
+            <div class="card">
+                <img alt="Buy Gone Girl Book Online at Low Prices in India | Gone Girl Reviews &amp;  Ratings - Amazon.in" class="n3VNCb" src="https://images-na.ssl-images-amazon.com/images/I/41aEQgTFPoL._SX304_BO1,204,203,200_.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 250px; height: 189px;">
+                <div class="card-body">
+                  <h4 class="card-title">Gillian Flynn</h4>
+                  <h6 class="card-text">Gone Girl</h6>
+                  <a href="#" class="btn btn-outline-secondary">2000 KZT </a>
+                </div>
+            </div>
+        </div>
+         <div class="item">
+            <div class="card">
+               <img alt="Martin Eden eBook de Jack London - 1230000819947 | Rakuten Kobo France" class="n3VNCb" src="https://kbimages1-a.akamaihd.net/0bdabcc9-d721-408d-bbc3-2b455381738f/1200/1200/False/martin-eden-71.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 250px; height: 189px;">
+                <div class="card-body">
+                  <h4 class="card-title">Jack London</h4>
+                  <h6 class="card-text">Martin Eden </h6>
+                  <a href="#" class="btn btn-outline-secondary">3500 KZT</a>
+                </div>
+            </div>
+        </div>
+         <div class="item">
+            <div class="card">
+                <img alt="Güzel Ahlak Sahibi Olmak: Gencligin El Kitabi - 1: Amazon.co.uk: sark,  Asim: 9789752783713: Books" class="n3VNCb" src="https://images-na.ssl-images-amazon.com/images/I/61a5mSdnyAL.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 250px; height: 189px; ;">
+                <div class="card-body">
+                  <h4 class="card-title">Asim Sark</h4>
+                  <h6 class="card-text">Guzel Ahlak Sahibi Olmak</h6>
+                  <a href="#" class="btn btn-outline-secondary">6000 KZT</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="card">
+                <img alt="Ученица. Предать, чтобы обрести себя | Лабиринт - Новости и обзоры. Дата: 8  ноября 2018" class="n3VNCb" src="https://img.labirint.ru/images/att/news/1-22232-1541176555-4549.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 250px; height:189px; margin: 0px;">
+                <div class="card-body">
+                  <h4 class="card-title">Tara Westover</h4>
+                  <h6 class="card-text">Educated</h6>
+                  <a href="#" class="btn btn-outline-secondary">4000 KZT </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script>
+    function popup() {
+        var btn=document.getElementById("btn_white").innerHTML;
+        if(btn="Log In") {
+
+
+   document.querySelector(".popup").style.display = "flex";
+  $(".popup").animate({opacity:"1"},"slow");
+  document.body.style.overlow = "hidden";
+}
+else {
+    logout();
+}
+}
+
+
+function close_popup() {
+     $(".popup").animate({opacity: "0"}, "slow");
+   $(".popup").animate({opacity: "0"}, "slow");
+    document.querySelector(".popup").style.display = "none";
+    document.body.style.overflow = "scroll";
+    document.getElementById("username").value = "";
+    document.getElementById("pass").value = "";
+    
+
+
+}
+</script>
+<script>
+function login(name) {
+document.querySelector(".user_profile").style.display="inline";
+document.getElementById("user_name").innerHTML = none;
+document.getElemenentById("btn_white").innerHTML="Log Out";
+close_popup();
+
+}
+function logout() {
+    document.querySelector(".user_profile").style.display="none";
+    document.getElemenentById("btn_white").innerHTML="Log In";
+
+}
+    </script>
+<h4><strong> Contacts</strong></h4>
+    <div id="map" style="width:1500px;height:500px"></div>
+
+    
+        <script type="text/javascript">
+  ymaps.ready(init);
+
+function init() {
+    var myMap = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 10
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+    // Creating a geo object with the "Point" geometry type.
+        myGeoObject = new ymaps.GeoObject({
+            // The geometry description.
+            geometry: {
+                type: "Point",
+                coordinates: [55.8, 37.8]
+            },
+            // Properties.
+            properties: {
+                // The placemark content.
+                iconContent: 'My Book Club Centre',
+                hintContent: 'Come on, drag already!'
+            }
+        }, {
+            /**
+             * Options.
+             * The placemark's icon will stretch to fit its contents.
+             */
+            preset: 'islands#blackStretchyIcon',
+            // The placemark can be dragged.
+            draggable: true
+        }),
+        myPieChart = new ymaps.Placemark([
+            55.847, 37.6
+        ], {
+            // Data for generating a diagram.
+            data: [
+                {weight: 8, color: '#0E4779'},
+                {weight: 6, color: '#1E98FF'},
+                {weight: 4, color: '#82CDFF'}
+            ],
+            iconCaption: "Book Club"
+        }, {
+            // Defining a custom placemark layout.
+            iconLayout: 'default#pieChart',
+            // Radius of the diagram, in pixels.
+            iconPieChartRadius: 30,
+            // The radius of the central part of the layout.
+            iconPieChartCoreRadius: 20,
+            // Fill style for the core.
+            iconPieChartCoreFillStyle: '#ffffff',
+            // The style for lines between sectors and the outline of the diagram.
+            iconPieChartStrokeStyle: '#ffffff',
+            // Width of the sector dividing lines and diagram outline.
+            iconPieChartStrokeWidth: 3,
+            // Maximum width of the placemark caption.
+            iconPieChartCaptionMaxWidth: 200
+        });
+
+    myMap.geoObjects
+        .add(myGeoObject)
+        .add(myPieChart)
+        .add(new ymaps.Placemark([55.684758, 37.738521], {
+            balloonContent: 'Relaxing house'
+        }, {
+            preset: 'islands#icon',
+            iconColor: '#0095b6'
+        }))
+        .add(new ymaps.Placemark([55.833436, 37.715175], {
+            balloonContent: 'Cafe'
+        }, {
+            preset: 'islands#dotIcon',
+            iconColor: '#735184'
+        }))
+        .add(new ymaps.Placemark([55.687086, 37.529789], {
+            balloonContent: 'Campus'
+        }, {
+            preset: 'islands#circleIcon',
+            iconColor: '#3caa3c'
+        }))
+        .add(new ymaps.Placemark([55.782392, 37.614924], {
+            balloonContent: 'Book Shop'
+        }, {
+            preset: 'islands#circleDotIcon',
+            iconColor: 'yellow'
+        }))
+        .add(new ymaps.Placemark([55.642063, 37.656123], {
+            balloonContent: 'Good Luck'
+        }, {
+            preset: 'Controls'
+        }))
+        .add(new ymaps.Placemark([55.826479, 37.487208], {
+            balloonContent: 'Food Mart'
+        }, {
+            preset: 'islands#governmentCircleIcon',
+            iconColor: '#3b5998'
+        }))
+        .add(new ymaps.Placemark([55.694843, 37.435023], {
+            balloonContent: '<strong>crocodile\'s nose</strong> color',
+            iconCaption: 'Payment Office'
+        }, {
+            preset: 'islands#greenDotIconWithCaption'
+        }))
+        .add(new ymaps.Placemark([55.790139, 37.814052], {
+            balloonContent: 'BOOKs',
+            iconCaption: 'Library'
+        }, {
+            preset: 'islands#blueCircleDotIconWithCaption',
+            iconCaptionMaxWidth: '50'
+        }));
+
+
+ var myGeoObject = new ymaps.GeoObject({
+        // Describing the geometry of the geo object.
+        geometry: {
+            // The "Polygon" geometry type.
+            type: "Polygon",
+            // Specifying the coordinates of the vertices of the polygon.
+            coordinates: [
+                // The coordinates of the vertices of the external contour.
+                [
+                    [55.75, 37.80],
+                    [55.80, 37.90],
+                    [55.75, 38.00],
+                    [55.70, 38.00],
+                    [55.70, 37.80]
+                ],
+                // The coordinates of the vertices of the inner contour.
+                [
+                    [55.75, 37.82],
+                    [55.75, 37.98],
+                    [55.65, 37.90]
+                ]
+            ],
+            // Setting the fill rule for internal contours using the "nonZero" algorithm.
+            fillRule: "nonZero"
+        },
+        // Defining properties of the geo object.
+        properties:{
+            // The contents of the balloon.
+            balloonContent: "Polygon"
+        }
+    }, {
+        /**
+         * Describing the geo object options.
+         *  Fill color.
+         */
+        fillColor: '#FFB6C1',
+        // Stroke color.
+        strokeColor: '#6a0dad',
+        // The overall transparency (for both fill and stroke).
+        opacity: 0.5,
+        // The stroke width.
+        strokeWidth: 5,
+        // The stroke style.
+        strokeStyle: 'shortdash'
+    });
+
+    // Adding the polygon to the map.
+    myMap.geoObjects.add(myGeoObject);
+
+    // Creating a polygon using the Polygon auxiliary class.
+    var myPolygon = new ymaps.Polygon([
+        /**
+         * Specifying the coordinates of the vertices of the polygon.
+         *  The coordinates of the vertices of the external contour.
+         */
+        [
+            [55.75, 37.50],
+            [55.80, 37.60],
+            [55.75, 37.70],
+            [55.70, 37.70],
+            [55.70, 37.50]
+        ],
+        // The coordinates of the vertices of the inner contour.
+        [
+            [55.75, 37.52],
+            [55.75, 37.68],
+            [55.65, 37.60]
+        ]
+    ], {
+        /**
+         * Describing the properties of the geo object.
+         *  The contents of the balloon.
+         */
+        hintContent: "Polygon"
+    }, {
+        /**
+         * Setting geo object options.
+         *  Fill color.
+         */
+        fillColor: '#00FF0088',
+        // The stroke width.
+        strokeWidth: 5
+
+    });
+
+    // Adding the polygon to the map.
+
+    myMap.geoObjects.add(myPolygon);
+}
+
+</script>
+<script >
+    
+    function change(element){
+        var a=element.innerHTML;
+        switch(a){
+            case "BOOKS":
+            document.getElementById("m1").src="https://static.tildacdn.com/tild3031-3530-4961-b035-376638343364/Layer_1.svg" ;
+            
+            document.getElementById("sol").innerHTML="BOOKS";
+            document.getElementById("map").src=" ";
+            break;
+            case "TOP BOOKS":
+            document.getElementById("m1").src="https://previews.123rf.com/images/alegretgrafic/alegretgrafic1512/alegretgrafic151200065/49328114-best-seller-ribbon.jpg" ;
+            document.getElementById("sol").innerHTML="TOP BOOKS";
+            break;
+            case "CONTACTS":
+            document.getElementById("m1").src="https://previews.123rf.com/images/alegretgrafic/alegretgrafic1512/alegretgrafic151200065/49328114-best-seller-ribbon.jpg" ;
+            document.getElementById("sol").innerHTML="CONTACTS";
+
+        }
+
+    }
+</script>
+
+
+
+
+
+<div class="containeri">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column1">
+      <img src="C:\Users\User\Pictures\Book5P.jpg" style="width:100%">
+    </div>
+    <div class="column1">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Kazakhstan</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+<script >
+<div class="t396"><div class="t396__artboard rendered" data-artboard-recid="141178583" data-artboard-height="400" data-artboard-height-res-640="340" data-artboard-height-res-480="350" data-artboard-height-res-320="460" data-artboard-height_vh="" data-artboard-valign="center" data-artboard-ovrflw="" data-artboard-proxy-min-offset-top="0" data-artboard-proxy-min-height="400" data-artboard-proxy-max-height="400"> <div class="t396__carrier" data-artboard-recid="141178583"></div> <div class="t396__filter" data-artboard-recid="141178583"></div> <div class="t396__elem tn-elem tn-elem__1411785831571656361485" data-elem-id="1571656361485" data-elem-type="image" data-field-top-value="169" data-field-top-res-640-value="148" data-field-top-res-320-value="122" data-field-left-value="20" data-field-left-res-640-value="10" data-field-left-res-320-value="10" data-field-width-value="440" data-field-width-res-640-value="280" data-field-width-res-480-value="240" data-field-width-res-320-value="300" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits" style="left: 71px; top: 169px; width: 440px;"> <a class="tn-atom" href="//qubius.com/en/"> <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild6361-3361-4335-b136-333263613863/learn_more_copy_10.png" imgfield="tn_img_1571656361485" src="https://thumb.tildacdn.com/tild6361-3361-4335-b136-333263613863/-/resize/440x/-/format/webp/learn_more_copy_10.png"> </a> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656424673" data-elem-id="1571656424673" data-elem-type="text" data-field-top-value="81" data-field-top-res-640-value="60" data-field-top-res-480-value="60" data-field-top-res-320-value="53" data-field-left-value="20" data-field-left-res-640-value="10" data-field-left-res-480-value="10" data-field-left-res-320-value="10" data-field-width-value="60" data-field-width-res-480-value="50" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 81px; left: 71px; width: 60px;"> <a class="tn-atom" href="//qubius.com/en/features">OVERVIEW</a> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656470087" data-elem-id="1571656470087" data-elem-type="text" data-field-top-value="81" data-field-top-res-640-value="60" data-field-top-res-480-value="60" data-field-top-res-320-value="53" data-field-left-value="140" data-field-left-res-640-value="98" data-field-left-res-480-value="78" data-field-left-res-320-value="108" data-field-width-value="60" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 81px; left: 191px; width: 60px;"> <a class="tn-atom" href="//qubius.com/en/partnership">PARTNERSHIP</a> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656489662" data-elem-id="1571656489662" data-elem-type="text" data-field-top-value="81" data-field-top-res-640-value="60" data-field-top-res-480-value="60" data-field-top-res-320-value="53" data-field-left-value="277" data-field-left-res-640-value="200" data-field-left-res-480-value="164" data-field-left-res-320-value="230" data-field-width-value="60" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 81px; left: 328px; width: 60px;"> <a class="tn-atom" href="//app.qubius.com/?lang=en" target="_blank">CONFIGURATOR</a> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656525313" data-elem-id="1571656525313" data-elem-type="shape" data-field-top-value="-194" data-field-left-value="7" data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits" style="width: 100px; left: 58px; top: -194px; height: 100px;"> <div class="tn-atom"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656610838" data-elem-id="1571656610838" data-elem-type="shape" data-field-top-value="-168" data-field-top-res-640-value="-224" data-field-top-res-480-value="-174" data-field-left-value="422" data-field-left-res-640-value="537" data-field-left-res-480-value="459" data-field-height-value="60" data-field-width-value="60" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits" style="width: 60px; left: 473px; top: -168px; height: 60px;"> <div class="tn-atom"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656624146" data-elem-id="1571656624146" data-elem-type="shape" data-field-top-value="-178" data-field-left-value="340" data-field-height-value="70" data-field-width-value="70" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits" style="width: 70px; left: 391px; top: -178px; height: 70px;"> <div class="tn-atom"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656638479" data-elem-id="1571656638479" data-elem-type="shape" data-field-top-value="-208" data-field-left-value="208" data-field-height-value="80" data-field-width-value="80" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits" style="width: 80px; left: 259px; top: -208px; height: 80px;"> <div class="tn-atom"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656715658" data-elem-id="1571656715658" data-elem-type="image" data-field-top-value="287" data-field-top-res-640-value="233" data-field-top-res-480-value="227" data-field-top-res-320-value="318" data-field-left-value="20" data-field-left-res-640-value="10" data-field-left-res-480-value="10" data-field-left-res-320-value="9" data-field-width-value="32" data-field-width-res-640-value="24" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits" style="left: 71px; top: 287px; width: 32px;"> <div class="tn-atom"> <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild6163-6165-4233-b038-633031306461/Frame_9.png" imgfield="tn_img_1571656715658" src="https://thumb.tildacdn.com/tild6163-6165-4233-b038-633031306461/-/resize/32x/-/format/webp/Frame_9.png"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656732578" data-elem-id="1571656732578" data-elem-type="image" data-field-top-value="287" data-field-top-res-640-value="233" data-field-top-res-480-value="227" data-field-top-res-320-value="318" data-field-left-value="93" data-field-left-res-640-value="55" data-field-left-res-480-value="75" data-field-left-res-320-value="79" data-field-width-value="32" data-field-width-res-640-value="24" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits" style="left: 144px; top: 287px; width: 32px;"> <div class="tn-atom"> <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild3133-3764-4436-a639-626464326133/Frame_10.png" imgfield="tn_img_1571656732578" src="https://thumb.tildacdn.com/tild3133-3764-4436-a639-626464326133/-/resize/32x/-/format/webp/Frame_10.png"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656764079" data-elem-id="1571656764079" data-elem-type="text" data-field-top-value="285" data-field-top-res-640-value="230" data-field-top-res-480-value="262" data-field-top-res-320-value="355" data-field-left-value="240" data-field-left-res-640-value="140" data-field-left-res-480-value="10" data-field-left-res-320-value="10" data-field-width-value="237" data-field-width-res-640-value="197" data-field-width-res-320-value="187" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 285px; left: 291px; width: 237px;"> <a class="tn-atom" href="//qubius.com/privacypolicy" target="_blank">© Qubius 2017-2020. All rights reserved<br>Personal data processing policy <br></a> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656877768" data-elem-id="1571656877768" data-elem-type="text" data-field-top-value="79" data-field-top-res-960-value="95" data-field-top-res-640-value="61" data-field-top-res-480-value="82" data-field-top-res-320-value="195" data-field-left-value="1048" data-field-left-res-960-value="818" data-field-left-res-640-value="529" data-field-left-res-480-value="313" data-field-left-res-320-value="120" data-field-width-value="115" data-field-width-res-640-value="95" data-field-width-res-480-value="155" data-field-width-res-320-value="90" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 95px; left: 869px; width: 115px;"> <a class="tn-atom" href="mailto:info@qubius.com" target="_blank">info@qubius.com</a> </div> <div class="t396__elem tn-elem tn-elem__1411785831571656990880" data-elem-id="1571656990880" data-elem-type="shape" data-field-top-value="169" data-field-top-res-960-value="229" data-field-top-res-640-value="144" data-field-top-res-480-value="144" data-field-top-res-320-value="235" data-field-left-value="925" data-field-left-res-960-value="695" data-field-left-res-640-value="429" data-field-left-res-480-value="312" data-field-left-res-320-value="9" data-field-height-value="36" data-field-height-res-640-value="24" data-field-width-value="36" data-field-width-res-640-value="24" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits" style="width: 36px; left: 746px; top: 229px; height: 36px;"> <a class="tn-atom t-bgimg loaded" href="https://www.facebook.com/qubius/" rel="nofollow" target="_blank" data-original="https://static.tildacdn.com/tild3465-3963-4930-a533-323231666631/Group.svg" style="background-image:url('https://static.tildacdn.com/tild3465-3963-4930-a533-323231666631/Group.svg');" src=""> </a> </div> <div class="t396__elem tn-elem tn-elem__1411785831571657021982" data-elem-id="1571657021982" data-elem-type="shape" data-field-top-value="169" data-field-top-res-960-value="229" data-field-top-res-640-value="144" data-field-top-res-480-value="144" data-field-top-res-320-value="235" data-field-left-value="1068" data-field-left-res-960-value="841" data-field-left-res-640-value="541" data-field-left-res-480-value="399" data-field-left-res-320-value="145" data-field-height-value="36" data-field-height-res-640-value="24" data-field-width-value="36" data-field-width-res-640-value="24" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits" style="width: 36px; left: 892px; top: 229px; height: 36px;"> <a class="tn-atom t-bgimg loaded" href="https://www.instagram.com/qubius_booth/" rel="nofollow" target="_blank" data-original="https://static.tildacdn.com/tild3339-3132-4136-b165-666461633331/Icon2.svg" style="background-image:url('https://static.tildacdn.com/tild3339-3132-4136-b165-666461633331/Icon2.svg');" src=""> </a> </div> <div class="t396__elem tn-elem tn-elem__1411785831571657079798" data-elem-id="1571657079798" data-elem-type="image" data-field-top-value="283" data-field-top-res-960-value="353" data-field-top-res-640-value="228" data-field-top-res-480-value="264" data-field-top-res-320-value="374" data-field-left-value="1080" data-field-left-res-960-value="850" data-field-left-res-640-value="547" data-field-left-res-480-value="383" data-field-left-res-320-value="230" data-field-width-value="100" data-field-width-res-640-value="80" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits" style="left: 901px; top: 353px; width: 100px;"> <a class="tn-atom" href="https://rubius.com/ru/" rel="nofollow" target="_blank"> <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild3830-3332-4564-b164-633364383730/image_82.png" imgfield="tn_img_1571657079798" src="https://thumb.tildacdn.com/tild3830-3332-4564-b164-633364383730/-/resize/100x/-/format/webp/image_82.png"> </a> </div> <div class="t396__elem tn-elem tn-elem__1411785831572235558554" data-elem-id="1572235558554" data-elem-type="text" data-field-top-value="294" data-field-top-res-960-value="364" data-field-top-res-640-value="238" data-field-top-res-480-value="228" data-field-top-res-320-value="325" data-field-left-value="930" data-field-left-res-960-value="690" data-field-left-res-640-value="410" data-field-left-res-480-value="323" data-field-left-res-320-value="223" data-field-width-value="137" data-field-width-res-320-value="87" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 364px; left: 741px; width: 137px;"> <div class="tn-atom" field="tn_text_1572235558554">© Developed with love by</div> </div> <div class="t396__elem tn-elem tn-elem__1411785831572924935059" data-elem-id="1572924935059" data-elem-type="shape" data-field-top-value="-168" data-field-top-res-640-value="-113" data-field-top-res-480-value="-104" data-field-top-res-320-value="-105" data-field-left-value="422" data-field-left-res-640-value="613" data-field-left-res-480-value="601" data-field-left-res-320-value="210" data-field-height-value="60" data-field-height-res-640-value="50" data-field-width-value="60" data-field-width-res-640-value="50" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits" style="width: 60px; left: 473px; top: -168px; height: 60px;"> <div class="tn-atom"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831572926388194" data-elem-id="1572926388194" data-elem-type="shape" data-field-top-value="-168" data-field-top-res-640-value="-113" data-field-top-res-480-value="-104" data-field-top-res-320-value="-78" data-field-left-value="422" data-field-left-res-640-value="613" data-field-left-res-480-value="601" data-field-left-res-320-value="352" data-field-height-value="60" data-field-height-res-640-value="50" data-field-height-res-320-value="40" data-field-width-value="60" data-field-width-res-640-value="50" data-field-width-res-320-value="40" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits" style="width: 60px; left: 473px; top: -168px; height: 60px;"> <div class="tn-atom"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831572950120077" data-elem-id="1572950120077" data-elem-type="image" data-field-top-value="287" data-field-top-res-640-value="233" data-field-top-res-480-value="227" data-field-top-res-320-value="320" data-field-left-value="166" data-field-left-res-640-value="100" data-field-left-res-480-value="140" data-field-left-res-320-value="146" data-field-width-value="32" data-field-width-res-640-value="24" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits" style="left: 217px; top: 287px; width: 32px;"> <div class="tn-atom"> <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild3266-3361-4463-b532-393566306632/EAC.svg" imgfield="tn_img_1572950120077" src="https://static.tildacdn.com/tild3266-3361-4463-b532-393566306632/EAC.svg"> </div> </div> <div class="t396__elem tn-elem tn-elem__1411785831573443662111" data-elem-id="1573443662111" data-elem-type="image" data-field-top-value="169" data-field-top-res-960-value="229" data-field-top-res-640-value="144" data-field-top-res-480-value="144" data-field-top-res-320-value="235" data-field-left-value="1139" data-field-left-res-960-value="911" data-field-left-res-640-value="601" data-field-left-res-480-value="444" data-field-left-res-320-value="210" data-field-width-value="36" data-field-width-res-640-value="24" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits" style="left: 962px; top: 229px; width: 36px;"> <a class="tn-atom" href="//www.pinterest.ru/qubius_booth/" rel="nofollow" target="_blank"> <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild6236-6139-4135-b639-396262663734/Pinterest_icon.svg" imgfield="tn_img_1573443662111" src="https://static.tildacdn.com/tild6236-6139-4135-b639-396262663734/Pinterest_icon.svg"> </a> </div> <div class="t396__elem tn-elem tn-elem__1411785831573444186343" data-elem-id="1573444186343" data-elem-type="text" data-field-top-value="79" data-field-top-res-960-value="95" data-field-top-res-640-value="61" data-field-top-res-480-value="60" data-field-top-res-320-value="195" data-field-left-value="914" data-field-left-res-960-value="678" data-field-left-res-640-value="419" data-field-left-res-480-value="370" data-field-left-res-320-value="9" data-field-width-value="135" data-field-width-res-640-value="105" data-field-width-res-480-value="155" data-field-width-res-320-value="105" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 95px; left: 729px; width: 135px;"> <div class="tn-atom" field="tn_text_1573444186343">+7 495 642 2772 |</div> </div> <div class="t396__elem tn-elem tn-elem__1411785831590139692010" data-elem-id="1590139692010" data-elem-type="image" data-field-top-value="177" data-field-top-res-960-value="237" data-field-top-res-640-value="150" data-field-top-res-480-value="150" data-field-top-res-320-value="241" data-field-left-value="1000" data-field-left-res-960-value="780" data-field-left-res-640-value="488" data-field-left-res-480-value="357" data-field-left-res-320-value="80" data-field-width-value="28" data-field-width-res-640-value="18" data-field-width-res-480-value="18" data-field-width-res-320-value="18" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits" style="left: 831px; top: 237px; width: 28px;"> <a class="tn-atom" href="//www.youtube.com/channel/UCHqBnpOvrF2Fnqh8FzfxMeQ" rel="nofollow" target="_blank"> <img class="tn-atom__img t-img loaded" data-original="https://static.tildacdn.com/tild3830-3731-4461-b538-623966306433/yt_icon_mono_dark.png" imgfield="tn_img_1590139692010" src="https://thumb.tildacdn.com/tild3830-3731-4461-b538-623966306433/-/resize/28x/-/format/webp/yt_icon_mono_dark.png"> </a> </div> <div class="t396__elem tn-elem tn-elem__1411785831590145183109" data-elem-id="1590145183109" data-elem-type="text" data-field-top-value="81" data-field-top-res-640-value="60" data-field-top-res-480-value="60" data-field-top-res-320-value="86" data-field-left-value="427" data-field-left-res-640-value="316" data-field-left-res-480-value="258" data-field-left-res-320-value="10" data-field-width-value="60" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 81px; left: 478px; width: 60px;"> <a class="tn-atom" href="//qubius.com/en#contacts">CONTACT</a> </div> </div> </div>
+
+    </body>
+    </html>
